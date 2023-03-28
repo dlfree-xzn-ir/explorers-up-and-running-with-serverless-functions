@@ -10,7 +10,8 @@ export const handler = async (event, context) => {
   return {
     statusCode: 200,
     body: JSON.stringify({
-      pokemon: data.pokemon_entries
+      event: event,
+      url: event.path + "?" + new URLSearchParams(event.queryStringParameters),
     })
   }
 }
